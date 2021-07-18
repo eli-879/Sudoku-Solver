@@ -35,7 +35,7 @@ class Box:
     def draw_num(self, win, num):
         self.num_font = pygame.font.SysFont("calibri", 30)
         self.num_text = self.num_font.render(num, 1, BLACK)
-        win.blit(self.num_text, (self.x + 30 - self.num_text.get_width()/2, self.y + 30 - self.num_text.get_height()/2))
+        win.blit(self.num_text, (int(self.x + 30 - self.num_text.get_width()/2), int(self.y + 30 - self.num_text.get_height()/2)))
 
     def draw_color(self, win):
         pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.width))
@@ -86,18 +86,18 @@ def draw_reset(win):
     pygame.draw.rect(win, BLACK, (780, 130, 310, 180), 3)
     word_font = pygame.font.SysFont("calibri", 50)
     word_label = word_font.render("RESET", 1, BLACK)
-    win.blit(word_label, (780 + (310-word_label.get_width())/2, 130 + (180-word_label.get_height())/2 ))
+    win.blit(word_label, (780 + int((310-word_label.get_width())/2), 130 + int((180-word_label.get_height())/2)))
 
 def draw_solve(win):
     pygame.draw.rect(win, BLACK, (780, 490, 310, 180), 3)
     word_font = pygame.font.SysFont("calibri", 50)
     word_label = word_font.render("SOLVE", 1, BLACK)
-    win.blit(word_label, (780 + (310-word_label.get_width())/2, 490 + (180-word_label.get_height())/2 ))
+    win.blit(word_label, (780 + int((310-word_label.get_width())/2), 490 + int((180-word_label.get_height())/2)))
 
 def draw_header(win):
     word_font = pygame.font.SysFont("calibri", 50)
     word_label = word_font.render("SUDOKU SOLVER", 1, BLACK)
-    win.blit(word_label, ((WIDTH - word_label.get_width())/2, (65 - word_label.get_height()/2)))
+    win.blit(word_label, (int((WIDTH - word_label.get_width())/2), int((65 - word_label.get_height()/2))))
 
 def draw(win, grid, rows, width, num):
     WIN.fill(WHITE)
